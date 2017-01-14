@@ -1,4 +1,4 @@
-# bazar: miscellaneous basic functions
+# bazar: miscellaneous basic R functions
 
 [![Travis-CI Build Status](https://travis-ci.org/paulponcet/bazar.svg?branch=master)](https://travis-ci.org/paulponcet/bazar)
 

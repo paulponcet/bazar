@@ -31,9 +31,9 @@
 #' Additional arguments to be passed to 
 #' \code{\link[utils]{write.table}}. 
 #' 
-#' @seealso \code{\link[utils]{writeClipboard}} 
-#' in package \pkg{utils}. 
-#' 
+# #' @seealso \code{\link[utils]{writeClipboard}} 
+# #' in package \pkg{utils}. 
+# #' 
 #' @importFrom utils write.table
 #' @export
 #' 
