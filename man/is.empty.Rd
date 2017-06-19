@@ -2,8 +2,8 @@
 % Please edit documentation in R/is.empty.R
 \name{is.empty}
 \alias{is.empty}
-\alias{is.empty.data.frame}
 \alias{is.empty.default}
+\alias{is.empty.data.frame}
 \title{Test emptyness}
 \usage{
 is.empty(x)
@@ -33,4 +33,3 @@ is.empty(data.frame())
 \seealso{
 \code{\link[bazar]{as.empty}} in this package.
 }
-

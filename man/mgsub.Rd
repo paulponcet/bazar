@@ -27,10 +27,9 @@ The function \code{mgsub} is a `multiple' version of \code{\link{gsub}}.
 mgsub(c("aa", "AA"), c("bb", "BB"), c("XXaaccAACC", "YYaaccAACC", "ZZaaccAACC"))
 
 }
-\author{
-Theodore Lytras on StackOverflow, see \url{http://stackoverflow.com/a/15254254/3902976}
-}
 \seealso{
 \code{\link[base]{gsub}} from package \pkg{base}.
 }
-
+\author{
+Theodore Lytras on StackOverflow, see \url{http://stackoverflow.com/a/15254254/3902976}
+}

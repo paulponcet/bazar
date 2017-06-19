@@ -1,8 +1,8 @@
 Package: bazar
 Type: Package
 Title: Miscellaneous Basic Functions
-Version: 0.1.4
-Date: 2017-01-10
+Version: 0.1.6
+Date: 2017-06-19
 Authors@R: person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre"))
 Description: A collection of miscellaneous functions for 
     copying objects to the clipboard ('Copy');
@@ -29,4 +29,4 @@ Suggests:
     testthat
 URL: https://github.com/paulponcet/bazar
 BugReports: https://github.com/paulponcet/bazar/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

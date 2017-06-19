@@ -41,10 +41,12 @@ function(...,
          na.rm = TRUE)
 {
   x <- unlist(list(...))
-  if (na.rm) {
+  nx <- length(x)
+
+  if (na.rm && nx > 0L) {
     x <- x[!is.na(x)]
   }
-  if (length(x)==0L) return(NA_character_)
+  if (nx == 0L) return(NA_character_)
   paste(x, collapse = sep)
 }
 

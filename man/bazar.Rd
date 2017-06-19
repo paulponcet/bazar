@@ -29,4 +29,3 @@ bazar provides a collection of miscellaneous functions for
   \code{\link{unwhich}}). 
 }
 }
-

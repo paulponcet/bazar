@@ -28,4 +28,3 @@ stopif(is.empty(numeric(0)))
 \seealso{
 \code{\link[base]{stopifnot}} from package \pkg{base}.
 }
-

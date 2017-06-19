@@ -22,4 +22,3 @@ is.formula(f <- formula("y ~ x"))
 is.formula(update(f, ~ . -1))
 
 }
-

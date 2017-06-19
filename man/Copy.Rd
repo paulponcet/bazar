@@ -31,4 +31,3 @@ The function \code{Copy} can typically be used
 to copy data from a data frame, in order to paste 
 it somewhere else (in Excel for instance).
 }
-

@@ -32,4 +32,3 @@ identical(sort(unique(as.integer(w1))), w2) # TRUE
 \seealso{
 \code{\link{which}}.
 }
-

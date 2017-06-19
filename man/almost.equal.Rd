@@ -29,4 +29,3 @@ almost.equal(x = 1:3,
 \author{
 Tommy on StackOverflow, see \url{http://stackoverflow.com/a/7667703}.
 }
-

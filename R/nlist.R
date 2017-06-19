@@ -40,6 +40,7 @@ function(x,
 {
   y <- as.list(x, ...)
   names(y) <- names(x)
+  if (is.empty(y)) return(nlist())
   if (!is.nlist(y)) stop("cannot convert 'x' into a named list")
   y
 }

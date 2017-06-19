@@ -34,4 +34,3 @@ sumNA(c())
 \seealso{
 \code{\link{sum}}.
 }
-

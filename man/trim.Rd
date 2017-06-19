@@ -23,4 +23,3 @@ trim(c(" a b", "Hello  World "))
 \seealso{
 \code{\link{gsub}}.
 }
-

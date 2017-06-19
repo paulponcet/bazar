@@ -27,4 +27,3 @@ almost.zero(c(0, 10^(-7), 10^(-8)))
 \seealso{
 \code{\link[base]{all.equal}}.
 }
-

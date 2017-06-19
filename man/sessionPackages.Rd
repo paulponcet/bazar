@@ -33,4 +33,3 @@ sessionPackages()
 \code{\link{sessionInfo}} from package \pkg{utils}, 
 \code{\link{R.version}} from package \pkg{base}.
 }
-

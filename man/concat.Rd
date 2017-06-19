@@ -44,4 +44,3 @@ concat(c(NA, NA), na.rm = FALSE) # usually not desirable
 \seealso{
 \code{\link[base]{paste}}.
 }
-

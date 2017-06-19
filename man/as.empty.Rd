@@ -2,8 +2,8 @@
 % Please edit documentation in R/as.empty.R
 \name{as.empty}
 \alias{as.empty}
-\alias{as.empty.data.frame}
 \alias{as.empty.default}
+\alias{as.empty.data.frame}
 \title{Convert to an empty object}
 \usage{
 as.empty(x, ...)
@@ -39,4 +39,3 @@ as.empty(x)
 \seealso{
 \code{\link{is.empty}} in this package.
 }
-

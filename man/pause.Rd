@@ -22,4 +22,3 @@ Pressing <Enter> continues the execution; typing 'stop'
 \seealso{
 \code{\link{Sys.sleep}}.
 }
-

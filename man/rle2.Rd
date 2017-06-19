@@ -28,4 +28,3 @@ Compute the lengths and values of runs of
 \code{\link[bazar]{almost.equal}} in this package; 
 \code{\link[base]{rle}} in package \pkg{base}.
 }
-

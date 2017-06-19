@@ -26,4 +26,3 @@ of the function \code{\%in\%}.
 \seealso{
 \code{\link{match}}.
 }
-

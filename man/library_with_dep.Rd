@@ -75,4 +75,3 @@ field of the \code{DESCRIPTION} file).
 \code{\link[tools]{package_dependencies}} from \pkg{tools}; 
 \code{\link[utils]{installed.packages}} from \pkg{utils}.
 }
-
