@@ -41,7 +41,7 @@ function(pattern,
     stop("pattern and replacement do not have the same length.")
   }
   result <- x
-  for (i in 1:length(pattern)) {
+  for (i in seq_along(pattern)) {
     result <- gsub(pattern[i], replacement[i], result, ...)
   }
   result
