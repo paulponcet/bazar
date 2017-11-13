@@ -21,7 +21,8 @@
 #' 
 #' @return 
 #' A logical, \code{TRUE} if all values of \code{x} 
-#' are whole numbers. 
+#' are (finite) whole numbers. 
+#' If \code{x} contains \code{NA} or \code{NaN}, then \code{NA} is returned. 
 #' 
 #' @export
 #' 
@@ -41,7 +42,9 @@ is.wholenumber <-
 function(x, 
          tolerance = sqrt(.Machine$double.eps))
 {
-  is.numeric(x) && all(abs(x - round(x)) < tolerance)
+  is.numeric(x) && 
+    #all(is.finite(x)) && # not sure...
+    all(abs(x - round(x)) < tolerance, na.rm = TRUE)
 }
 
 
