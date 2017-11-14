@@ -19,7 +19,8 @@ The default value is close to \code{1.5e-8}.}
 }
 \value{
 A logical, \code{TRUE} if all values of \code{x} 
-are whole numbers.
+are (finite) whole numbers. 
+If \code{x} contains \code{NA} or \code{NaN}, then \code{NA} is returned.
 }
 \description{
 The function \code{is.wholenumber} tests if values of 

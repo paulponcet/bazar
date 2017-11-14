@@ -21,7 +21,8 @@ function(ask = TRUE)
   if (ask) {
     arg <- "*"
     while (arg %nin% c("Y", "n")) {
-      arg <- readline("Do you want to delete all objects from the current environment? [Y/n] ")
+      arg <- readline("Do you want to delete all objects 
+                       from the current environment? [Y/n] ")
     }
   } else {
     arg <- "Y"

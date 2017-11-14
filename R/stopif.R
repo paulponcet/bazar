@@ -35,7 +35,8 @@ function(...)
       ch <- deparse(mc[[i + 1]], width.cutoff = 60L)
       if (length(ch) > 1L) 
         ch <- paste(ch[1L], "....")
-      stop(sprintf(ngettext(length(r), "%s is TRUE", "%s are not all FALSE"), ch), 
+      stop(sprintf(ngettext(length(r), "%s is TRUE", "%s are not all FALSE"), 
+                   ch), 
            call. = FALSE, domain = NA)
     }
   }

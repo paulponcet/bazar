@@ -1,3 +1,11 @@
+# bazar 1.0.6
+
+* Ternary operator 'condition %?% true %:% false' is added. s  
+* Function 'find_pkgs()' renamed into 'get_all_pkgs()' and corrected. 
+* Function 'get_all_funs()' added. 
+* Function 'normalize()' is now documented.  
+
+
 # bazar 1.0.5
 
 * Functions 'top()' and 'bot()' are added.  

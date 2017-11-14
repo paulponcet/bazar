@@ -20,5 +20,7 @@
 verlan <- 
 function(x)
 {
-  sapply(strsplit(x, ""), FUN = function(x) paste(rev(x), collapse = ""))
+  vapply(strsplit(x, ""), 
+         FUN = function(x) paste(rev(x), collapse = ""), 
+         FUN.VALUE = character(1L))
 }

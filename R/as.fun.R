@@ -9,6 +9,9 @@
 #' @param x
 #' The object to convert.
 #' 
+#' @param envir
+#' Environment in which the function should be defined. 
+#' 
 #' @param ...
 #' Additional arguments, not used currently. 
 #' 
@@ -72,9 +75,13 @@ function(x,
     w <- 1L
   } else {
     ns <- unlist(sessionPackages(), use.names = FALSE)
-    w <- which(sapply(ns, FUN = function(n) { x %in% getNamespaceExports(n) }))
-    if (length(w) > 1L) stop(paste0("several packages export '", x, "', please use ::"))
-    if (length(w) == 0L) stop(paste0("'", x, "' is not exported by the packages currently loaded"))
+    w <- which(vapply(ns, 
+                      FUN = function(n) { x %in% getNamespaceExports(n) }, 
+                      FUN.VALUE = logical(1L)))
+    if (length(w) > 1L) 
+      stop(paste0("several packages export '", x, "', please use ::"))
+    if (length(w) == 0L) 
+      stop(paste0("'", x, "' is not exported by the packages currently loaded"))
   }
   structure(getExportedValue(ns[w], x), fun = x, package = ns[w])
 }
@@ -129,7 +136,7 @@ function(x,
 {
   function(n = names(x))
   {
-    n = match.arg(n, names(x))
+    n <- match.arg(n, names(x))
     x[[n]]
   }
 }

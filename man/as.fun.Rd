@@ -34,6 +34,8 @@ as.fun(x, ...)
 \item{x}{The object to convert.}
 
 \item{...}{Additional arguments, not used currently.}
+
+\item{envir}{Environment in which the function should be defined.}
 }
 \value{
 The desired function.

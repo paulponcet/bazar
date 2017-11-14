@@ -1,8 +1,8 @@
 Package: bazar
 Type: Package
 Title: Miscellaneous Basic Functions
-Version: 1.0.5
-Date: 2017-11-07
+Version: 1.0.6
+Date: 2017-11-14
 Authors@R: person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre"))
 Description: A collection of miscellaneous functions for 
     copying objects to the clipboard ('Copy');
@@ -12,10 +12,14 @@ Description: A collection of miscellaneous functions for
     creating or testing for named lists ('nlist', 'as.nlist', 'is.nlist'), 
     formulas ('is.formula'), empty objects ('as.empty', 'is.empty'), 
     whole numbers ('as.wholenumber', 'is.wholenumber'); 
-    testing for equality ('almost.equal', 'almost.zero'); 
+    testing for equality ('almost.equal', 'almost.zero') and computing 
+    uniqueness ('almost.unique'); 
     getting modified versions of usual functions ('rle2', 'sumNA'); 
     making a pause or a stop ('pause', 'stopif'); 
-    and others ('erase', '%nin%', 'unwhich'). 
+    converting into a function ('as.fun'); 
+    providing a C like ternary operator ('condition %?% true %:% false'); 
+    finding packages and functions ('get_all_pkgs', 'get_all_funs');
+    and others ('erase', '%nin%', 'unwhich', 'top', 'bot', 'normlize'). 
 License: GPL-3
 LazyData: TRUE
 Depends:

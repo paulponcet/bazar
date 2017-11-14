@@ -35,15 +35,19 @@ function(package = NULL)
   z <- list()
   if (is.null(package)) {
     package <- grep("^package:", search(), value = TRUE)
-    keep <- sapply(package, function(x) x == "package:base" ||
-                     !is.null(attr(as.environment(x), "path")))
+    keep <- vapply(package, 
+                   FUN = function(x) x == "package:base" ||
+                     !is.null(attr(as.environment(x), "path")), 
+                   FUN.VALUE = logical(1L))
     package <- sub("^package:", "", package[keep])
   }
   pkgDesc <- lapply(package, FUN = utils::packageDescription)
   if (length(package) == 0)
     stop("no valid packages were specified")
-  basePkgs <- sapply(pkgDesc, function(x) !is.null(x$Priority) &&
-                       x$Priority == "base")
+  basePkgs <- vapply(pkgDesc, 
+                     FUN = function(x) !is.null(x$Priority) &&
+                       x$Priority == "base", 
+                     FUN.VALUE = logical(1L))
   z$basePkgs <- package[basePkgs]
   if (any(!basePkgs)) {
     z$otherPkgs <-  package[!basePkgs]
