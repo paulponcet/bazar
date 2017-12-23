@@ -1,8 +1,8 @@
 Package: bazar
 Type: Package
 Title: Miscellaneous Basic Functions
-Version: 1.0.6
-Date: 2017-11-14
+Version: 1.0.7
+Date: 2017-12-17
 Authors@R: person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre"))
 Description: A collection of miscellaneous functions for 
     copying objects to the clipboard ('Copy');
@@ -19,7 +19,7 @@ Description: A collection of miscellaneous functions for
     converting into a function ('as.fun'); 
     providing a C like ternary operator ('condition %?% true %:% false'); 
     finding packages and functions ('get_all_pkgs', 'get_all_funs');
-    and others ('erase', '%nin%', 'unwhich', 'top', 'bot', 'normlize'). 
+    and others ('erase', '%nin%', 'unwhich', 'top', 'bot', 'normalize'). 
 License: GPL-3
 LazyData: TRUE
 Depends:

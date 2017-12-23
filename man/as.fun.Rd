@@ -10,6 +10,8 @@
 \alias{as.fun.factor}
 \alias{as.fun.complex}
 \alias{as.fun.data.frame}
+\alias{as.fun.lm}
+\alias{as.fun.rpart}
 \title{Convert object to function}
 \usage{
 as.fun(x, ...)
@@ -29,6 +31,10 @@ as.fun(x, ...)
 \method{as.fun}{complex}(x, ...)
 
 \method{as.fun}{data.frame}(x, ...)
+
+\method{as.fun}{lm}(x, ...)
+
+\method{as.fun}{rpart}(x, ...)
 }
 \arguments{
 \item{x}{The object to convert.}
@@ -51,10 +57,12 @@ as.fun("mean")
 as.fun("edit")
 as.fun("stats::predict")
 
+## the constant function '1'
 f <- as.fun(1)
 f(2)   # 1
 f("a") # 1
 
+## the constant function 'FALSE'
 f <- as.fun(FALSE)
 f(2)   # FALSE
 f("a") # FALSE

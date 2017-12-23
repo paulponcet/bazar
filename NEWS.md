@@ -1,6 +1,12 @@
+# bazar 1.0.7
+
+* 'as.fun()' added for several R models, including 'lm', 'rpart', 'gam', 
+'randomForest'. (2017-12-17)
+
+
 # bazar 1.0.6
 
-* Ternary operator 'condition %?% true %:% false' is added. s  
+* Ternary operator 'condition %?% true %:% false' is added. 
 * Function 'find_pkgs()' renamed into 'get_all_pkgs()' and corrected. 
 * Function 'get_all_funs()' added. 
 * Function 'normalize()' is now documented.  

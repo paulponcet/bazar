@@ -3,7 +3,7 @@
 \name{almost.unique}
 \alias{almost.unique}
 \alias{almost.unique.default}
-\title{Test if values of a vector are almost zero}
+\title{Almost unique elements}
 \usage{
 almost.unique(x, ...)
 

@@ -1,5 +1,5 @@
 #' @title
-#' Test if values of a vector are almost zero
+#' Almost unique elements
 #'
 #' @description
 #' The function \code{almost.unique} extracts elements of a vector \code{x} 
