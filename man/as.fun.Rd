@@ -39,7 +39,7 @@ as.fun(x, ...)
 \arguments{
 \item{x}{The object to convert.}
 
-\item{...}{Additional arguments, not used currently.}
+\item{...}{Additional arguments (currently not used).}
 
 \item{envir}{Environment in which the function should be defined.}
 }
@@ -73,6 +73,6 @@ f("y") # 'y' column
 
 }
 \author{
-Adapted from MrFlick, 
+\code{as.fun.character} is adapted from MrFlick, 
 see \url{https://stackoverflow.com/a/38984214} on StackOverflow.
 }

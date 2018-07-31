@@ -21,5 +21,7 @@
 is.formula <-
 function(x)
 {
-  typeof(x) == "language" && inherits(x, "formula")
+  typeof(x) == "language" && 
+    inherits(x, "formula") && 
+    (length(x) %in% c(2L, 3L))
 }

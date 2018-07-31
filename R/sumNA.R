@@ -25,7 +25,7 @@
 #' sum(x)
 #' sumNA(x)
 #' sum(x, na.rm = TRUE)
-#' sumNA(x, na.rm = TRUE) # here is the difference
+#' sumNA(x, na.rm = TRUE) # here is the difference with 'sum()'
 #' 
 #' sum(c())
 #' sumNA(c())

@@ -1,7 +1,12 @@
-# bazar 1.0.7
+# bazar 1.0.9 (2018-07-31)
+
+* 'get_vars()' added. This function extracts variables from a formula. 
+
+
+# bazar 1.0.7 (2017-12-17)
 
 * 'as.fun()' added for several R models, including 'lm', 'rpart', 'gam', 
-'randomForest'. (2017-12-17)
+'randomForest'. 
 
 
 # bazar 1.0.6

@@ -45,8 +45,8 @@ c(capitalize,!capitalize) \%?\% "A" \%:\% c("b","c")
 
 # Chaining operators is permitted 
 FALSE \%?\% "a" \%:\% 
-  FALSE \%?\% "b" \%:\% 
-  capitalize \%?\% "C" \%:\% "c" 
+  (FALSE \%?\% "b") \%:\% 
+  (capitalize \%?\% "C") \%:\% "c" 
 
 }
 \author{

@@ -36,7 +36,7 @@ function(fun,
     parts <- strsplit(fun, "::")[[1L]]
     pkgs <- parts[1L]
   } else {
-    if (is.null(packages)) packages <- unique(installed.packages()[,1L])
+    if (is.null(packages)) packages <- .packages(all.available = TRUE)
     w <- which(vapply(packages, 
                       FUN = function(pkg) { fun %in% get_all_funs(pkg) }, 
                       FUN.VALUE = logical(1L)))

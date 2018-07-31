@@ -13,7 +13,7 @@
 #' Environment in which the function should be defined. 
 #' 
 #' @param ...
-#' Additional arguments, not used currently. 
+#' Additional arguments (currently not used). 
 #' 
 #' @return 
 #' The desired function. 
@@ -86,7 +86,9 @@ function(x,
     if (length(w) == 0L) 
       stop(paste0("'", x, "' is not exported by the packages currently loaded"))
   }
-  structure(getExportedValue(ns[w], x), fun = x, package = ns[w])
+  f = getExportedValue(ns[w], x)
+  #formals(f) = rlist::list.merge(formals(f), nlist(...))
+  structure(f, fun = x, package = ns[w])
 }
 
 

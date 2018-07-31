@@ -45,8 +45,8 @@
 #' 
 #' # Chaining operators is permitted 
 #' FALSE %?% "a" %:% 
-#'   FALSE %?% "b" %:% 
-#'   capitalize %?% "C" %:% "c" 
+#'   (FALSE %?% "b") %:% 
+#'   (capitalize %?% "C") %:% "c" 
 #' 
 "%?%" <- 
 function(condition, 
