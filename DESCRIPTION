@@ -1,8 +1,8 @@
 Package: bazar
 Type: Package
 Title: Miscellaneous Basic Functions
-Version: 1.0.9
-Date: 2018-07-31
+Version: 1.0.10
+Date: 2018-10-03
 Authors@R: person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre"))
 Description: A collection of miscellaneous functions for 
     copying objects to the clipboard ('Copy');

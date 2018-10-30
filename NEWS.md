@@ -1,11 +1,17 @@
+# bazar 1.0.10 (2018-10-03)
+
+* Add 'as.na()' S3 method, which transforms an object into an 'NA' object of 
+the same type. 
+
+
 # bazar 1.0.9 (2018-07-31)
 
-* 'get_vars()' added. This function extracts variables from a formula. 
+* Add 'get_vars()'. This function extracts variables from a formula. 
 
 
 # bazar 1.0.7 (2017-12-17)
 
-* 'as.fun()' added for several R models, including 'lm', 'rpart', 'gam', 
+* Add 'as.fun()' for several R models, including 'lm', 'rpart', 'gam', 
 'randomForest'. 
 
 
@@ -13,14 +19,14 @@
 
 * Ternary operator 'condition %?% true %:% false' is added. 
 * Function 'find_pkgs()' renamed into 'get_all_pkgs()' and corrected. 
-* Function 'get_all_funs()' added. 
+* Add function 'get_all_funs()'. 
 * Function 'normalize()' is now documented.  
 
 
 # bazar 1.0.5
 
-* Functions 'top()' and 'bot()' are added.  
-* Function 'almost.unique()' is added.  
+* Add functions 'top()' and 'bot()'.  
+* Add function 'almost.unique()'.  
 
 
 # bazar 1.0.4
@@ -35,7 +41,7 @@
 
 # bazar 1.0.2
 
-* Function 'normalize()' added.
+* Add function 'normalize()'.
 
 
 # bazar 1.0.1
@@ -50,12 +56,12 @@
 
 # bazar 0.1.9
 
-* Changed 'as.function()' into 'as.fun()'.
+* Change 'as.function()' into 'as.fun()'.
 
 
 # bazar 0.1.8
 
-* Creation of 'as.function.character()'.
+* Create 'as.function.character()'.
 
 
 # bazar 0.1.7
@@ -71,27 +77,6 @@
 # bazar 0.1.5
 
 * Slight correction in as.nlist(). 
-
-
-# bazar 0.1.4
-
-* Switched from MIT license to GPL-3. 
-
-
-# bazar 0.1.3
-
-* Significant change in the behaviour of concat(). 
-* Functions concat0() and concat_() added. 
-
-
-# bazar 0.1.2
-
-* Functions added: concat(), erase(), is.formula(), pause(), trim(), verlan().
-
-
-# bazar 0.1.1
-
-* 'namedlist' functions added
 
 
 # bazar 0.1.0
