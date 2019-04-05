@@ -33,6 +33,6 @@ function(x,
          na.rm = TRUE, 
          ...)
 {
-  fun <- as.fun(fun)
+  fun <- as_fun(fun)
   x/fun(x, na.rm = na.rm, ...)
 }

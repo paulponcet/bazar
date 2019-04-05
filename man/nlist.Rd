@@ -2,11 +2,17 @@
 % Please edit documentation in R/nlist.R
 \name{nlist}
 \alias{nlist}
+\alias{as_nlist}
+\alias{is_nlist}
 \alias{as.nlist}
 \alias{is.nlist}
 \title{Named lists}
 \usage{
 nlist(...)
+
+as_nlist(x, ...)
+
+is_nlist(x)
 
 as.nlist(x, ...)
 
@@ -25,6 +31,6 @@ Functions to construct, coerce and check for named lists.
 }
 \examples{
 x <- nlist(x = 2, y = c("a", "b"))
-is.nlist(x)
+is_nlist(x)
 
 }

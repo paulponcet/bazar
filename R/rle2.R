@@ -3,7 +3,7 @@
 #' 
 #' @description 
 #' Compute the lengths and values of runs of 
-#' \code{\link[bazar]{almost.equal}} values in a vector. 
+#' \code{\link[bazar]{almost_equal}} values in a vector. 
 #' 
 #' @param x
 #' numeric vector. 
@@ -23,7 +23,7 @@
 #' @export
 #' 
 #' @seealso 
-#' \code{\link[bazar]{almost.equal}} in this package; 
+#' \code{\link[bazar]{almost_equal}} in this package; 
 #' \code{\link[base]{rle}} in package \pkg{base}. 
 #' 
 rle2 <- 
@@ -38,7 +38,7 @@ function(x,
     return(structure(list(lengths = integer(), values = x), 
                      class = "rle"))
   }
-  y <- !almost.equal(x[-1L], x[-n], tolerance = tolerance)
+  y <- !almost_equal(x[-1L], x[-n], tolerance = tolerance)
   i <- c(which(y | is.na(y)), n)
   structure(list(lengths = diff(c(0L, i)), values = x[i]), 
             class = "rle")

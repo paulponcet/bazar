@@ -6,8 +6,9 @@
 \title{Loading/Attaching and listing of packages with dependencies}
 \usage{
 library_with_dep(package, help, pos = 2, lib.loc = NULL,
-  character.only = FALSE, logical.return = FALSE, warn.conflicts = TRUE,
-  quietly = FALSE, verbose = getOption("verbose"), which = "Imports",
+  character.only = FALSE, logical.return = FALSE,
+  warn.conflicts = TRUE, quietly = FALSE,
+  verbose = getOption("verbose"), which = "Imports",
   recursive = FALSE, reverse = FALSE)
 
 require_with_dep(package, lib.loc = NULL, quietly = FALSE,

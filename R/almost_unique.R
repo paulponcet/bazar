@@ -2,7 +2,7 @@
 #' Almost unique elements
 #'
 #' @description
-#' The function \code{almost.unique} extracts elements of a vector \code{x} 
+#' The function \code{almost_unique} extracts elements of a vector \code{x} 
 #' that are unique up to a tolerance factor.
 #'
 #' @param x
@@ -15,7 +15,7 @@
 #' @param ...
 #' Additional arguments to be passed to the function 
 #' \code{\link[base]{duplicated}}, which is used internally by 
-#' \code{almost.unique}. 
+#' \code{almost_unique}. 
 #'
 #' @return
 #' A vector of the same type as \code{x}.
@@ -27,25 +27,37 @@
 #' @export
 #' 
 #' @examples 
-#' almost.unique(c(1, 1.01), tol = 0.1)
-#' almost.unique(c(1, 1.01), tol = 0.01)
+#' almost_unique(c(1, 1.01), tol = 0.1)
+#' almost_unique(c(1, 1.01), tol = 0.01)
 #' 
-#' almost.unique(c(1, 2, 3), tol = 10)
-#' almost.unique(c(1, 2, 3), tol = 5)
-#' almost.unique(c(1, 2, 3), tol = 1)
+#' almost_unique(c(1, 2, 3), tol = 10)
+#' almost_unique(c(1, 2, 3), tol = 5)
+#' almost_unique(c(1, 2, 3), tol = 1)
+#' 
+almost_unique <- 
+function(x, 
+         ...)
+{
+  UseMethod("almost_unique")
+}
+
+
+#' @export
+#' @rdname almost_unique
 #' 
 almost.unique <- 
 function(x, 
          ...)
 {
-  UseMethod("almost.unique")
+  .Deprecated("almost_unique")
+  almost_unique(x, ...)
 }
 
 
 #' @export
-#' @rdname almost.unique
+#' @rdname almost_unique
 #' 
-almost.unique.default <- 
+almost_unique.default <- 
 function(x, 
          tolerance = sqrt(.Machine$double.eps),
          ...)

@@ -22,9 +22,9 @@ corresponding values.
 }
 \description{
 Compute the lengths and values of runs of 
-\code{\link[bazar]{almost.equal}} values in a vector.
+\code{\link[bazar]{almost_equal}} values in a vector.
 }
 \seealso{
-\code{\link[bazar]{almost.equal}} in this package; 
+\code{\link[bazar]{almost_equal}} in this package; 
 \code{\link[base]{rle}} in package \pkg{base}.
 }

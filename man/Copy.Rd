@@ -4,8 +4,8 @@
 \alias{Copy}
 \title{Copy data to the clipboard}
 \usage{
-Copy(x, size = 128L, quote = TRUE, sep = "\\t", na = "", dec = ".",
-  ...)
+Copy(x, size = 128L, quote = TRUE, sep = "\\t", na = "",
+  dec = ".", ...)
 }
 \arguments{
 \item{x}{An object.}

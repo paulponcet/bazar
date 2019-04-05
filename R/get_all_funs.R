@@ -19,11 +19,15 @@
 get_all_funs <- 
 function(pkg)
 {
-  if (pkg %in% c("Deducer", "rattle", "RGtk2")) {
-    warning(paste0("get_all_funs() returns 'character(0)' for package ", pkg))
-    return(character(0))
+  stopifnot(length(pkg) == 1L)
+  
+  if (pkg %in% c("Deducer", "DeducerExtra", "gstat", "rattle", 
+                 "rggobi", "RGtk2", "spacetime", "translations")) {
+    warning(paste0("get_all_funs() returns 'character(0)' for package ", pkg), 
+            call. = FALSE)
+    return(character(0L))
   }
   tryCatch(suppressWarnings(getNamespaceExports(pkg)), 
-           error = function(e) character(0))
+           error = function(e) character(0L))
   #unclass(lsf.str(envir = asNamespace(pkg), all = TRUE))
 }

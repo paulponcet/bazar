@@ -9,19 +9,21 @@ get_all_pkgs(fun, packages = NULL)
 \arguments{
 \item{fun}{function or character. The function of interest.}
 
-\item{packages}{The packages to look into. If \code{NULL}, the whole list of installed 
-packages is explorered.}
+\item{packages}{The packages to look into. If \code{NULL}, the list of currently attached
+packages is explored.}
 }
 \value{
 A character vector, the packages.
 }
 \description{
-\code{get_all_pkgs} provides all installed packages exported by a given 
-function.
+\code{get_all_pkgs} provides all packages (belonging to a given list of 
+packages) exported by a given function.
 }
 \examples{
+\dontrun{
 get_all_pkgs("as.fun")
 get_all_pkgs(as.fun)
 get_all_pkgs("stats::median")
+}
 
 }

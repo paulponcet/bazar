@@ -40,7 +40,7 @@ function(formula,
          data = NULL, 
          intersection = TRUE)
 {
-  stopifnot(is.formula(formula))
+  stopifnot(is_formula(formula))
   if (is.null(data)) {
     # do nothing
   } else if (is.character(data)) {
@@ -63,7 +63,7 @@ function(formula,
   vars = unique(unlist(vars))
   if (!is.null(data) && !all(vars %in% names(data)) && intersection) {
     warning("some 'formula' variables are not present in 'data' columns, 
-             intersection of both is returned")
+             intersection of both is returned", call. = FALSE)
     vars = intersect(vars, names(data))
   }
   vars

@@ -19,33 +19,45 @@
 #' 
 #' @examples 
 #' x <- c("a", "b", "c")
-#' as.na(x)
-#' class(as.na(x)) # still a character
+#' as_na(x)
+#' class(as_na(x)) # still a character
 #' 
 #' x <- factor(LETTERS)
-#' as.na(x)        # levels are kept
-#' class(as.na(x)) # still a factor
+#' as_na(x)        # levels are kept
+#' class(as_na(x)) # still a factor
 #' 
 #' x <- data.frame(x = 1:3, y = 2:4)
-#' as.na(x)
-#' dim(as.na(x))
+#' as_na(x)
+#' dim(as_na(x))
 #' 
 #' x <- matrix(1:6, 2, 3)
 #' attr(x, "today") <- Sys.Date()
-#' as.na(x)        # attributes are kept
+#' as_na(x)        # attributes are kept
 #'
-as.na <-
+as_na <-
 function(x, 
          ...)
 {
-  UseMethod("as.na")
+  UseMethod("as_na")
 }
 
 
 #' @export
-#' @rdname as.na
+#' @rdname as_na
+#' 
+as.na <- 
+function(x, 
+         ...)
+{
+  .Deprecated("as_na")
+  as_na(x, ...)
+}
+
+
+#' @export
+#' @rdname as_na
 #'
-as.na.default <-
+as_na.default <-
 function(x, 
          ...)
 {
@@ -56,13 +68,13 @@ function(x,
 
 
 #' @export
-#' @rdname as.na
+#' @rdname as_na
 #'
-as.na.data.frame <-
+as_na.data.frame <-
 function(x, 
          ...)
 {
-  y <- as.data.frame(lapply(x, FUN = as.na, ...), 
+  y <- as.data.frame(lapply(x, FUN = as_na, ...), 
                      stringsAsFactors = FALSE)
   attributes(y) <- attributes(x)
   y
@@ -70,13 +82,13 @@ function(x,
 
 
 #' @export
-#' @rdname as.na
+#' @rdname as_na
 #'
-as.na.list <-
+as_na.list <-
 function(x, 
          ...)
 {
-  y <- lapply(x, FUN = as.na, ...)
+  y <- lapply(x, FUN = as_na, ...)
   attributes(y) <- attributes(x)
   y
 }

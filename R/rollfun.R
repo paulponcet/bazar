@@ -51,7 +51,7 @@ function(x,
   nx <- length(x)
   if (nx==0L) return(x)
 
-  fun <- as.fun(fun)
+  fun <- as_fun(fun)
   x <- as.matrix(x)
   if (is.null(.idx)) {
     .idx <- make_idx(k, nx)

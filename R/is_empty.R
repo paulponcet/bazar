@@ -11,29 +11,41 @@
 #' \code{TRUE} if \code{x} is empty, \code{FALSE} otherwise. 
 #' 
 #' @seealso 
-#' \code{\link[bazar]{as.empty}} in this package. 
+#' \code{\link[bazar]{as_empty}} in this package. 
 #' 
 #' @export
 #' 
 #' @examples 
-#' is.empty(4)
-#' is.empty(c())
-#' is.empty(character(0))
-#' is.empty(list())
-#' is.empty(integer(0))
-#' is.empty(data.frame())
+#' is_empty(4)
+#' is_empty(c())
+#' is_empty(new.env())
+#' is_empty(character(0))
+#' is_empty(list())
+#' is_empty(integer(0))
+#' is_empty(data.frame())
 #' 
-is.empty <- 
+is_empty <- 
 function(x)
 {
-  UseMethod("is.empty")
+  UseMethod("is_empty")
 }
 
 
 #' @export
-#' @rdname is.empty
+#' @rdname is_empty
 #' 
-is.empty.default <- 
+is.empty <- 
+function(x)
+{
+  .Deprecated("is_empty")
+  is_empty(x)
+}
+
+
+#' @export
+#' @rdname is_empty
+#' 
+is_empty.default <- 
 function(x)
 {
   length(x)==0L
@@ -41,9 +53,9 @@ function(x)
 
 
 #' @export
-#' @rdname is.empty
+#' @rdname is_empty
 #' 
-is.empty.data.frame <- 
+is_empty.data.frame <- 
 function(x)
 {
   nrow(x) == 0L #|| ncol(x) == 0L
