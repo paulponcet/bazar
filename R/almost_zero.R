@@ -2,7 +2,7 @@
 #' Test if values of a vector are almost zero
 #'
 #' @description
-#' The function \code{almost.zero} tests if values of
+#' The function \code{almost_zero} tests if values of
 #' the numeric vector \code{x} are equal to zero up 
 #' to a tolerance.
 #'
@@ -21,11 +21,23 @@
 #' @export
 #'
 #' @examples
-#' almost.zero(c(0, 10^(-7), 10^(-8)))
+#' almost_zero(c(0, 10^(-7), 10^(-8)))
 #'
-almost.zero <-
+almost_zero <-
 function(x,
          tolerance = sqrt(.Machine$double.eps))
 {
-  almost.equal(x, 0, tolerance)
+  almost_equal(x, 0, tolerance)
+}
+
+
+#' @export
+#' @rdname almost_zero
+#' 
+almost.zero <- 
+function(x,
+         tolerance = sqrt(.Machine$double.eps))
+{
+  .Deprecated("almost_zero")
+  almost_zero(x, tolerance)
 }

@@ -2,9 +2,9 @@
 #' Convert object to function
 #' 
 #' @description 
-#' \code{as.fun} is a generic function that does the same as \code{as.function} 
+#' \code{as_fun} is a generic function that does the same as \code{as.function} 
 #' from package \pkg{base}, with the additional feature that 
-#' \code{as.fun.character} converts a string into the function it names. 
+#' \code{as_fun.character} converts a string into the function it names. 
 #' 
 #' @param x
 #' The object to convert.
@@ -19,43 +19,57 @@
 #' The desired function. 
 #' 
 #' @author 
-#' \code{as.fun.character} is adapted from MrFlick, 
+#' \code{as_fun.character} is adapted from MrFlick, 
 #' see \url{https://stackoverflow.com/a/38984214} on StackOverflow. 
 #' 
 #' @export
-#'
+#' 
+#' @seealso \code{\link[rlang]{as_function}} in package \pkg{rlang}. 
+#' 
 #' @examples 
-#' as.fun(mean)
-#' as.fun("mean")
-#' as.fun("edit")
-#' as.fun("stats::predict")
+#' as_fun(mean)
+#' as_fun("mean")
+#' as_fun("edit")
+#' as_fun("stats::predict")
 #' 
 #' ## the constant function '1'
-#' f <- as.fun(1)
+#' f <- as_fun(1)
 #' f(2)   # 1
 #' f("a") # 1
 #' 
 #' ## the constant function 'FALSE'
-#' f <- as.fun(FALSE)
+#' f <- as_fun(FALSE)
 #' f(2)   # FALSE
 #' f("a") # FALSE
 #' 
-#' f <- as.fun(data.frame(x = 1:2, y = 2:3))
+#' f <- as_fun(data.frame(x = 1:2, y = 2:3))
 #' f("x") # 'x' column
 #' f("y") # 'y' column
+#' 
+as_fun <- 
+function(x, 
+         ...)
+{
+  UseMethod("as_fun")  
+}
+
+
+#' @export
+#' @rdname as_fun
 #' 
 as.fun <- 
 function(x, 
          ...)
 {
-  UseMethod("as.fun")  
+  .Deprecated("as_fun")
+  as_fun(x, ...)
 }
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.default <- 
+as_fun.default <- 
 function(x, 
          envir = parent.frame(),
          ...)
@@ -66,47 +80,74 @@ function(x,
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.character <-
+as_fun.character <-
 function(x,
          ...)
 {
-  if (grepl("::", x)) {
+  if (grepl(":::", x)) {
+    ns <- strsplit(x, ":::")[[1L]]
+    x <- ns[2L]
+    w <- 1L
+  } else if (grepl("::", x)) {
     ns <- strsplit(x, "::")[[1L]]
     x <- ns[2L]
     w <- 1L
   } else {
-    ns <- unlist(sessionPackages(), use.names = FALSE)
+    ns <- .packages(all.available = FALSE) #unlist(sessionPackages(), use.names = FALSE)
     w <- which(vapply(ns, 
                       FUN = function(n) { x %in% getNamespaceExports(n) }, 
                       FUN.VALUE = logical(1L)))
     if (length(w) > 1L) 
-      stop(paste0("several packages export '", x, "', please use ::"))
+      stop(paste0("several packages export '", x, "', please use ::"), call. = FALSE)
     if (length(w) == 0L) 
-      stop(paste0("'", x, "' is not exported by the packages currently loaded"))
+      stop(paste0("'", x, "' is not exported by the packages currently loaded"), 
+           call. = FALSE)
   }
-  f = getExportedValue(ns[w], x)
+  f <- getExportedValue(ns[w], x)
   #formals(f) = rlist::list.merge(formals(f), nlist(...))
   structure(f, fun = x, package = ns[w])
 }
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.name <- 
+as_fun.formula <- 
 function(x, 
          ...)
 {
-  as.fun(as.character(x), ...)
+  rlang::as_function(x, ...)
 }
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.numeric <-
+as_fun.name <- 
+function(x, 
+         ...)
+{
+  as_fun(as.character(x), ...)
+}
+
+
+#' @export
+#' @rdname as_fun
+#' 
+as_fun.call <- 
+function(x, 
+         ...)
+{
+  as_fun(as.character(x[[1L]]), ...)
+}
+
+
+#' @export
+#' @rdname as_fun
+#' 
+as_fun.numeric <-
 function(x,
          ...)
 {
@@ -115,27 +156,27 @@ function(x,
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.logical <- as.fun.numeric
+as_fun.logical <- as_fun.numeric
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.factor <- as.fun.numeric
+as_fun.factor <- as_fun.numeric
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.complex <- as.fun.numeric
+as_fun.complex <- as_fun.numeric
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.data.frame <- 
+as_fun.data.frame <- 
 function(x, 
          ...)
 {
@@ -151,9 +192,9 @@ function(x,
 
 #' @importFrom stats predict 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.lm <- 
+as_fun.lm <- 
 function(x, 
          ...)
 {
@@ -164,11 +205,11 @@ function(x,
   ..n <- all.vars(..n)[-1]
   if ("..x" %in% ..n) {
     stop("the model's formula contains a variable called '..x', 
-         'as.fun()' does not work in this specific case")
+         'as_fun()' does not work in this specific case")
   }
   if ("..n" %in% ..n) { 
     stop("the model's formula contains a variable called '..n', 
-         'as.fun()' does not work in this specific case")
+         'as_fun()' does not work in this specific case")
   }
   
   ## Creation of the function to be returned, with no arguments yet
@@ -200,16 +241,16 @@ function(x,
 
 
 #' @export
-#' @rdname as.fun
+#' @rdname as_fun
 #' 
-as.fun.rpart <- as.fun.lm
+as_fun.rpart <- as_fun.lm
 # TODO: essayer de voir si le Y du rpart est un factor... 
 
 
 #' @importFrom stats as.stepfun
 #' @export
 #' 
-as.fun.isoreg <- 
+as_fun.isoreg <- 
 function(x, 
          ...)
 {

@@ -37,8 +37,8 @@ function(pattern,
          x,
          ...)
 {
-  if (length(pattern)!=length(replacement)) {
-    stop("pattern and replacement do not have the same length.")
+  if (length(pattern) != length(replacement)) {
+    stop("pattern and replacement do not have the same length.", call. = FALSE)
   }
   result <- x
   for (i in seq_along(pattern)) {

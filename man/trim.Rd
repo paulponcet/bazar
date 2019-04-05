@@ -21,5 +21,5 @@ trim(c(" a b", "Hello  World "))
 
 }
 \seealso{
-\code{\link{gsub}}.
+\code{\link{gsub}}, \code{\link{trimws}}.
 }

@@ -11,7 +11,7 @@
 #' @return
 #' A character vector of the same length as \code{x}.
 #'
-#' @seealso \code{\link{gsub}}.
+#' @seealso \code{\link{gsub}}, \code{\link{trimws}}.
 #'
 #' @export
 #'

@@ -13,18 +13,19 @@
 #' @return 
 #' A named list. 
 #'  
-#' @importFrom kimisc nlist
+#' @importFrom tibble lst
 #' @export
 #' 
 #' @examples 
 #' x <- nlist(x = 2, y = c("a", "b"))
-#' is.nlist(x)
+#' is_nlist(x)
+#'
 #' 
 nlist <- 
 function(...)
 {
-  x <- kimisc::nlist(...)
-  if (is.empty(x)) {
+  x <- tibble::lst(...)
+  if (is_empty(x)) {
     names(x) <- character(0)
   }
   x
@@ -34,14 +35,14 @@ function(...)
 #' @export
 #' @rdname nlist
 #' 
-as.nlist <-
+as_nlist <-
 function(x, 
          ...)
 {
   y <- as.list(x, ...)
   names(y) <- names(x)
-  if (is.empty(y)) return(nlist())
-  if (!is.nlist(y)) stop("cannot convert 'x' into a named list")
+  if (is_empty(y)) return(nlist())
+  if (!is_nlist(y)) stop("cannot convert 'x' into a named list", call. = FALSE)
   y
 }
 
@@ -49,7 +50,7 @@ function(x,
 #' @export
 #' @rdname nlist
 #' 
-is.nlist <- 
+is_nlist <- 
 function(x)
 {
   is.list(x) && 
