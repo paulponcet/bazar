@@ -4,6 +4,8 @@
 \alias{nlist}
 \alias{as_nlist}
 \alias{is_nlist}
+\alias{as.nlist}
+\alias{is.nlist}
 \title{Named lists}
 \usage{
 nlist(...)
@@ -11,6 +13,10 @@ nlist(...)
 as_nlist(x, ...)
 
 is_nlist(x)
+
+as.nlist(x, ...)
+
+is.nlist(x)
 }
 \arguments{
 \item{...}{Named objects.}
@@ -26,6 +32,5 @@ Functions to construct, coerce and check for named lists.
 \examples{
 x <- nlist(x = 2, y = c("a", "b"))
 is_nlist(x)
-
 
 }
