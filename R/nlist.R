@@ -20,7 +20,6 @@
 #' x <- nlist(x = 2, y = c("a", "b"))
 #' is_nlist(x)
 #'
-#' 
 nlist <- 
 function(...)
 {
@@ -56,4 +55,27 @@ function(x)
   is.list(x) && 
     !is.null(names(x)) && 
     "" %nin% names(x)
+}
+
+
+#' @export
+#' @rdname nlist
+#' 
+as.nlist <- 
+function(x, 
+         ...)
+{
+  .Deprecated("as_nlist")
+  as_nlist(x, ...)
+}
+
+
+#' @export
+#' @rdname nlist
+#' 
+is.nlist <- 
+function(x)
+{
+  .Deprecated("is_nlist")
+  is_nlist(x)
 }

@@ -32,6 +32,10 @@
 #' as_fun("edit")
 #' as_fun("stats::predict")
 #' 
+#' ## Uses 'rlang::as_function()' for formulas under the hood: 
+#' f <- as_fun(~ . + 1)
+#' f(10) # 11
+#' 
 #' ## the constant function '1'
 #' f <- as_fun(1)
 #' f(2)   # 1
